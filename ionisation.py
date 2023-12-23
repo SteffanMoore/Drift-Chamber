@@ -5,14 +5,10 @@ from ray_generation import Generate_muon
 
 
 def main():
-    pass
-
-x_length, y_length, z_length = 0.5, 1, 0.3
-grid_spacing = 0.001
-x_cells, z_cells = round(x_length/grid_spacing), round(z_length/grid_spacing)
+    plot_ionisation()
 
 
-def next_z_line(z_1, z_2):
+def next_z_line(z_1, z_2, grid_spacing):
     """
     Accepts two previous z positions and returns the z position of the next z grid line intersection, using the previous
     positions to check positive or negative line gradient.
@@ -37,7 +33,7 @@ def x_position(z_position, z_centre, x_centre, azimuth, zenith):
     return x_pos
 
 
-def grid_intersections(muon):
+def grid_intersections(muon, x_cells, grid_spacing, z_length):
     """
     Finds the coordinates where the ray path crosses the grid lines.
     Given a generated ray, returns the an x list and a z list of ray path intersections 
@@ -60,7 +56,7 @@ def grid_intersections(muon):
         # After an x gridline intersection, all z gridline intersections before the next x intersection are added
         while len(intersection_list) > 1:
 
-            z_line = next_z_line(intersection_list[-2][1], intersection_list[-1][1])
+            z_line = next_z_line(intersection_list[-2][1], intersection_list[-1][1], grid_spacing)
             x_of_line_intersect = x_position(z_line, z_centre, x_centre, azimuth, zenith)
 
             # Z gridline intersections are added until the next z intersection exceeds the next x intersection
@@ -82,7 +78,7 @@ def hypotenuse(x, z):
     return hyp
 
 
-def electrons_emitted(muon):
+def electrons_emitted(muon, z_cells, x_cells, grid_spacing, z_length):
     """
     Accepts a generated cosmic ray as an argument and returns a populated charge distribution from the resulting ionisation
     from the ray. From the ray information, path intersections with the grid are found and which allows a calculation of charge
@@ -90,7 +86,7 @@ def electrons_emitted(muon):
     as a projection of a 3D model onto a 2D array and returned.
     """
 
-    intersections = grid_intersections(muon)
+    intersections = grid_intersections(muon, x_cells, grid_spacing, z_length)
     x_total= intersections[0][0] - intersections[-1][0]
     z_total = intersections[0][1] - intersections[-1][1]
     azimuth = muon[1]
@@ -119,8 +115,34 @@ def electrons_emitted(muon):
     return charge_distribution
 
 
-plt.imshow(electrons_emitted(Generate_muon(x_length, y_length, z_length)))
-plt.show()
+def initial_ionisation(detector_length, grid_spacing):
+    """
+    Returns the initial ionisation of a randomly generated cosmic ray in the form of an array
+    """
+
+    # Finds the number of z and x cells through input information.
+    z_cell_number = round(detector_length[2] / grid_spacing)
+    x_cell_number = round(detector_length[0] / grid_spacing)
+
+    cosmic_ray = Generate_muon(detector_length[0], detector_length[1], detector_length[2])
+    ionisation_array = electrons_emitted(cosmic_ray, z_cell_number, x_cell_number, grid_spacing, detector_length[2])
+
+    return ionisation_array
+
+
+def plot_ionisation():
+    """
+    Returns a figure of the initial ionisation of a randomly generated cosmic ray
+    """
+
+    detector_length = (0.5, 1, 0.3)
+    grid_spacing = 0.001
+
+    ionisation_array = initial_ionisation(detector_length, grid_spacing)
+
+    plt.imshow(ionisation_array)
+    plt.show()
+
 
 if __name__ == "__main__":
     main()
