@@ -1,5 +1,5 @@
-from drift_diffusion import simulate_chamber
-from ionisation import initial_ionisation
+from modules.drift_diffusion import simulate_chamber
+from modules.ionisation import initial_ionisation
 import matplotlib.pyplot as plt
 import matplotlib.animation as animate
 

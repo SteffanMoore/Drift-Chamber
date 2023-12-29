@@ -1,7 +1,12 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-from ray_generation import Generate_muon
+
+# Conditional import to differentiate running as script vs package.
+if __name__ == "__main__":
+    from ray_generation import Generate_muon
+else:
+    from .ray_generation import Generate_muon
 
 
 def main():
