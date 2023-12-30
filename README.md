@@ -6,7 +6,14 @@ This is a simulation of a drift chamber particle detector, made in my third year
 
 ## Implementation
 ### Cosmic Ray Generation
-Cosmic ray generation is handled by modules/ray_generation.py. The starting position of the ray is chosen randomly from any x, y, z coordinate within the detector. The path angle is then decided by calculating a random azimuth angle (angle on the horizontal plane) and a random zenith angle (angle towards the sky). However, while azimuth angle is uniformly distributed (making a standard random number suitable), zenith angle has a cos^2(x) distibution, reaching a maximum from straight above. To accomodate this, the accept/reject method is used to correctly provide a random angle within the distribution.
+Cosmic ray generation is handled by "modules/ray_generation.py". The starting position of the ray is chosen randomly from any x, y, z coordinate within the detector. The path angle is then decided by calculating a random azimuth angle (angle on the horizontal plane) and a random zenith angle (angle towards the sky). However, while azimuth angle is uniformly distributed (making a standard random number suitable), zenith angle has a cos^2(x) distibution, reaching a maximum from straight above. To accomodate this, the accept/reject method is used to correctly provide a random angle within the distribution.
+
+When "modules/ray_generation.py" is ran as script, it produces histograms of the azimuth and zenith distributions (the zenith graph has a cos^2(x) guiding line).
+##### Azimuth
+![]https://github.com/SteffanMoore/Drift-Chamber/blob/main/Azimuth.png
+
+##### Zenith
+![]https://github.com/SteffanMoore/Drift-Chamber/blob/main/Zenith.png
 
 ### Ionisation
 ### Drift-Diffusion
