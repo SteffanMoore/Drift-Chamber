@@ -11,8 +11,8 @@ Cosmic ray generation is handled by "modules/ray_generation.py". The starting po
 When "modules/ray_generation.py" is ran as script, it produces histograms of the azimuth and zenith distributions (the zenith graph has a cos^2(x) guiding line).
 ##### Azimuth
 <p align="middle">
-  <img src="/Azimuth.png" width="500" />
-  <img src="/Zenith.png" width="500" />
+  <img src="/Azimuth.png" width="500" title="Azimuth" />
+  <img src="/Zenith.png" width="500" title="Zenith" />
 </p>
 
 ### Ionisation
