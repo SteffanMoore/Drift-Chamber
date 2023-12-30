@@ -10,10 +10,10 @@ Cosmic ray generation is handled by "modules/ray_generation.py". The starting po
 
 When "modules/ray_generation.py" is ran as script, it produces histograms of the azimuth and zenith distributions (the zenith graph has a cos^2(x) guiding line).
 ##### Azimuth
-![]https://github.com/SteffanMoore/Drift-Chamber/blob/main/Azimuth.png
+![](https://github.com/SteffanMoore/Drift-Chamber/blob/main/Azimuth.png)
 
 ##### Zenith
-![]https://github.com/SteffanMoore/Drift-Chamber/blob/main/Zenith.png
+![](https://github.com/SteffanMoore/Drift-Chamber/blob/main/Zenith.png)
 
 ### Ionisation
 ### Drift-Diffusion
