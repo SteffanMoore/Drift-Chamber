@@ -14,11 +14,7 @@ Azimuth             |  Zenith
 :-------------------------:|:-------------------------:
 <img src="/Azimuth.png" />  |  <img src="/Zenith.png" />
 
-##### Azimuth
-<p align="middle">
-  <img src="/Azimuth.png" width="500" title="Azimuth" />
-  <img src="/Zenith.png" width="500" title="Zenith" />
-</p>
-
 ### Ionisation
+Next the ionisation needs to be shown within the chamber now that the path is known. A fixed ionisation rate was assumed of 
+
 ### Drift-Diffusion
