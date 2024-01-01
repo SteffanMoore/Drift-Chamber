@@ -16,5 +16,9 @@ Azimuth             |  Zenith
 
 ### Ionisation
 Next the ionisation needs to be shown within the chamber now that the path is known. A fixed ionisation rate was assumed of 
+<img src="/readme_pics/Ionised_charge.png" />
 
 ### Drift-Diffusion
+<img src="/readme_pics/Point_charge.png" />
+
+<img src="/readme_pics/drift_diffusion.gif" />
