@@ -24,9 +24,9 @@ Now that a list of path lengths has been found, all of these values can be mappe
 ### Drift-Diffusion
 The final and most important part of the simulation is modelling drift-diffusion of the charges in the chamber. For this we use the drift-diffusion equation in matrix form:
 
-$$ (q^n = {Mq^{n+1}}) $$
+$$ q^n = {Mq^{n+1}} $$
 
-Where $(q^n)$ is the current charge distribution, $(q^{n+1})$ is the charge distribution after the next time step and M is tri-diagonal matrix with fringes.
+Where $q^n$ is the current charge distribution, $q^{n+1}$ is the charge distribution after the next time step and M is tri-diagonal matrix with fringes.
 
 <img src="/readme_pics/Point_charge.png" />
 
