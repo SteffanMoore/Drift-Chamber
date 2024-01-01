@@ -27,6 +27,7 @@ The final and most important part of the simulation is modelling drift-diffusion
 $$ (q^n = {Mq^{n+1}}) $$
 
 Where $(q^n)$ is the current charge distribution, $(q^{n+1})$ is the charge distribution after the next time step and M is tri-diagonal matrix with fringes.
+
 <img src="/readme_pics/Point_charge.png" />
 
 <img src="/readme_pics/drift_diffusion.gif" />
