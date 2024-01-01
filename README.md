@@ -35,6 +35,6 @@ When the "modules/drift_diffusion.py" file is ran as a script, a large point cha
 <img src="/readme_pics/Point_charge.png" />
 
 ### Simulation and animation
-When the "simulation.py" file is run, a random cosmic ray is generated and the initial ionisation calculated before putting it through the drift-diffusion for a set number of iterations. Once this has completed, the out put will be an animation of the simulation, which is also saved as a .gif file called "drift_diffusion.gif". An example of this is shown below.
+When the "simulation.py" file is run, a random cosmic ray is generated and the initial ionisation calculated before putting it through the drift-diffusion equation for a set number of iterations. Once this has completed, the output will be an animation of the simulation, which is also saved as a .gif file called "drift_diffusion.gif". An example of this is shown below:
 
 <img src="/readme_pics/drift_diffusion.gif" />
